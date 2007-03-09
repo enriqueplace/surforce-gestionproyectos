@@ -1,0 +1,18 @@
+<div align="center">
+<!--{if $resultado.error}-->
+	<img src="img/smileymal.png" align="center">
+	<span class="atencion">¡Maldición! Error al procesar los datos: </span>
+	<!--{$resultado.mensaje}-->
+	<br /><br />
+	<a href="mailto:tallerphp5@surforce.com">[Insultar al Responsable de Esto]</A> ó 
+<a href="registro.php?accion=datos_personales">[Volver al formulario de registro]</a> 
+<!--{else}-->
+	<img src="img/smileybien.png">
+	<strong>¡Impresionante! ¡Por fin estás dentro del taller!</strong>
+		<br /><br />
+	<!--{$resultado.mensaje}--> 
+	<br /><br />
+	<a href="index.php">Volver a la p&aacute;gina principal</a>
+
+<!--{/if}-->
+</div>

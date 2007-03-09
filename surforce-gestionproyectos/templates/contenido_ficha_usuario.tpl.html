@@ -1,0 +1,107 @@
+<div><b><!--{$titulo}--></b></div>
+
+<div style="border:1px solid #FF0000;padding:10px;width:200px;text-align:center;">
+<!--{if $usuario.habilitado}-->
+	<a href="ficha_usuario.php?id=<!--{$usuario.id_usuario}-->&accion=deshabilitar">
+		Deshabilitar Usuario
+	</a>
+<!--{else}-->
+	<a href="ficha_usuario.php?id=<!--{$usuario.id_usuario}-->&accion=habilitar">
+		Habilitar Usuario
+	</a>
+<!--{/if}-->
+</div>
+
+<div>
+	<table border="0" cellspacing="0"  cellpadding="5" class="listado"> 
+	<tr>
+		<td>
+			<table border="0" cellspacing="0"  cellpadding="5" class="listado"> 
+
+				<tr><th>Foto</th><td>
+					<a href="fotos/<!--{$usuario.usuario_usuario}-->.jpg" target="_blank">
+						<img src="fotos/<!--{$usuario.usuario_usuario}-->_sm.jpg" />
+					</a>
+					<a href="fotos/<!--{$usuario.usuario_usuario}-->.gif" target="_blank">
+						<img src="fotos/<!--{$usuario.usuario_usuario}-->_sm.gif" />
+					</a>					
+					<a href="fotos/<!--{$usuario.usuario_usuario}-->.png" target="_blank">
+						<img src="fotos/<!--{$usuario.usuario_usuario}-->_sm.png" />
+					</a>										
+				</td></tr>
+				<tr><th>ID</th><td><!--{$usuario.id_usuario}--></td></tr>
+				<tr><th>usuario</th><td><a href="mailto:<!--{$usuario.usuario_usuario}-->?subject=TallerPHP5:"><!--{$usuario.usuario_usuario}--></a></td></tr>
+				<tr><th>nombre</th><td><!--{$usuario.nombre_usuario}--></td></tr>
+				<tr><th>apellido</th><td><!--{$usuario.apellido_usuario}--></td></tr>
+				<tr><th>país</th><td><!--{$usuario.pais_usuario}--></td></tr>
+				<tr><th>ciudad</th><td><!--{$usuario.ciudad_usuario}--></td></tr>
+				<tr><th>gmail</th><td><!--{$usuario.gmail_usuario}--></td></tr>
+				<tr><th>skype</th><td><!--{$usuario.skype_usuario}--></td></tr>
+				<tr><th>profesión</th><td><!--{$usuario.profesion_usuario}--></td></tr>				
+				<tr><th>empresa</th><td><!--{$usuario.empresa_usuario}--></td></tr>
+				<tr><th>expectativas</th><td><!--{$usuario.expectativas_usuario}--></td></tr>
+				<tr><th>foto</th><td><!--{$usuario.foto_usuario}--></td></tr>
+				<tr><th>fecha ingreso</th><td><!--{$usuario.fecha_ingreso_usuario}--></td></tr>
+				<tr><th>fecha modificación</th><td><!--{$usuario.fecha_ult_mod_usuario}--></td></tr>
+				<tr><th>IP</th><td><!--{$usuario.ip_usuario}--></td></tr>	
+				<tr><th>IP Real</th><td><!--{$usuario.ip_real_usuario}--></td></tr>
+				<tr><th>Habilitado</th><td><!--{$usuario.habilitado}--></td></tr>
+			</table>
+		
+		</td>
+
+		<td>
+			<table border="0" cellspacing="0"  cellpadding="5" class="listado"> 
+<!--{*				<tr>
+					<th>Valores</th>
+					<td>
+						<!--{foreach item=it from=$valores_encuesta}-->
+							<!--{it.id_valor}--> - <!--{it.desc_valor}--><br />
+						<!--{/foreach}-->
+					</td>
+				</tr>
+				*}-->
+				<tr><th>programación</th><td><!--{$usuario.programacion}--></td></tr>
+				<tr><th>objetos</th><td><!--{$usuario.objetos}--></td></tr>
+				<tr><th>sql</th><td><!--{$usuario.sql}--></td></tr>
+				<tr><th>uml</th><td><!--{$usuario.uml}--></td></tr>
+				<tr><th>php</th><td><!--{$usuario.php}--></td></tr>
+				<tr><th>html</th><td><!--{$usuario.html}--></td></tr>
+				<tr><th>css</th><td><!--{$usuario.css}--></td></tr>
+				<tr><th>js</th><td><!--{$usuario.js}--></td></tr>
+				<tr><th>Conocimientos (suma)</th><td><!--{$usuario.conocimientos}--></td></tr>
+				<tr><th>lenguajes</th><td><!--{$usuario.lenguajes}--></td></tr>				
+				<tr><th>patrones</th><td><!--{$usuario.patrones}--></td></tr>
+				<tr><th>frameworks</th><td><!--{$usuario.frameworks}--></td></tr>
+				<tr><th>puesto postulado</th><td><!--{$usuario.desc_puesto}--></td></tr>
+				<tr><th>Se enteraron por </th><td><!--{$usuario.enteraron_por}--></td></tr>
+				
+				<tr>
+					<th>
+
+					<!--{if $usuario.foro_asignado}-->
+						<a href="ficha_usuario.php?id=<!--{$usuario.id_usuario}-->&accion=desasignarforo">
+							Desasignar a foro
+						</a>
+				<!--{else}-->
+						<a href="ficha_usuario.php?id=<!--{$usuario.id_usuario}-->&accion=asignarforo">
+							Asignar a foro 
+						</a>
+				<!--{/if}-->
+					</th>
+					<td>
+						<!--{if $usuario.foro_asignado}-->
+							ASIGNADO						
+						<!--{else}-->
+							NO ASIGNADO
+						<!--{/if}-->
+					</td>
+				</tr>
+
+			</table>
+		
+		</td>
+	</tr>
+
+	</table>
+</div>

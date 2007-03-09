@@ -1,0 +1,254 @@
+<script language="javascript" type="text/javascript" src="sitio.js"></script>
+
+<script language="javascript" type="text/javascript">
+function validar(){
+      var frm = document.getElementById("form1");
+      var msg = new String();
+
+      if(trim(frm.enteraron.value) == ""){
+         msg = "Debe indicar como se enteró de la existencia del taller.";
+      }	  
+
+      if(!frm.puesto[0].checked && !frm.puesto[1].checked){
+         msg = "Debe indicar el \"Puesto\" que le gustaría ocupar.";
+      }
+            
+      if(!frm.js[0].checked && !frm.js[1].checked && !frm.js[2].checked && !frm.js[3].checked){
+         msg = "Debe indicar su nivel de conocimientos en \"JavaScript\"";
+      }	  
+      
+      if(!frm.css[0].checked && !frm.css[1].checked && !frm.css[2].checked && !frm.css[3].checked){
+         msg = "Debe indicar su nivel de conocimientos en \"CSS\"";
+      }	  
+      
+      if(!frm.html[0].checked && !frm.html[1].checked && !frm.html[2].checked && !frm.html[3].checked){
+         msg = "Debe indicar su nivel de conocimientos en \"HTML\"";
+      }	  
+      
+      if(!frm.php[0].checked && !frm.php[1].checked && !frm.php[2].checked && !frm.php[3].checked){
+         msg = "Debe indicar su nivel de conocimientos en \"PHP\"";
+      }	  
+      
+      if(!frm.uml[0].checked && !frm.uml[1].checked && !frm.uml[2].checked && !frm.uml[3].checked){
+         msg = "Debe indicar su nivel de conocimientos en \"UML\"";
+      }	  
+      
+      if(!frm.sql[0].checked && !frm.sql[1].checked && !frm.sql[2].checked && !frm.sql[3].checked){
+         msg = "Debe indicar su nivel de conocimientos en \"SQL\"";
+      }	  
+      
+      if(!frm.objetos[0].checked && !frm.objetos[1].checked && !frm.objetos[2].checked && !frm.objetos[3].checked){
+         msg = "Debe indicar su nivel de conocimientos en \"Objetos\"";
+      }	  
+      
+      if(!frm.programacion[0].checked && !frm.programacion[1].checked && !frm.programacion[2].checked && !frm.programacion[3].checked){
+         msg = "Debe indicar su nivel de conocimientos en \"Programación\"";
+      }	  
+  	  
+      if(msg.length > 0){
+         alert('Atencion: ' + msg);
+      }else{
+		frm.action = "registro.php?accion=procesar";
+        frm.submit();
+      }
+}
+</script>
+<!--{$mensaje}-->
+
+<div align="center"> <h1>Paso 2 de 2 - Formulario de Registro de Usuarios</h1></div>
+
+<form id="form1" name="form1" method="post" action="javascript:validar();">
+<table align="center" border="0" cellspacing="5" cellpadding="0">
+  <tr>
+    <td colspan="5"><h3>Encuesta de Conocimientos </h3></td>
+  </tr>
+  <tr>
+    <td><h4>Generales</h4></td>
+    <td width="40"><div align="center">Nada</div></td>
+    <td width="40"><div align="center">B&aacute;sico</div></td>
+    <td width="40"><div align="center">Medio</div></td>
+    <td width="40"><div align="center">Alto&nbsp;&nbsp;</div></td>
+  </tr>
+  <tr>
+    <td class="textform"><span class="atencion">*</span> Programaci&oacute;n en general: </td>
+    <td width="40"><div align="center">
+      <input name="programacion" type="radio" value="1" <!--{if $datos.programacion == 1}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="programacion" type="radio" value="2" <!--{if $datos.programacion == 2}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="programacion" type="radio" value="3" <!--{if $datos.programacion == 3}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="programacion" type="radio" value="4" <!--{if $datos.programacion == 4}-->checked="checked"<!--{/if}--> />
+    </div></td>
+  </tr>
+  <tr>
+    <td class="textform"><span class="atencion">*</span> Orientaci&oacute;n a Objetos: </td>
+    <td width="40"><div align="center">
+      <input name="objetos" type="radio" value="1" <!--{if $datos.objetos == 1}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="objetos" type="radio" value="2" <!--{if $datos.objetos == 2}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="objetos" type="radio" value="3" <!--{if $datos.objetos == 3}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="objetos" type="radio" value="4" <!--{if $datos.objetos == 4}-->checked="checked"<!--{/if}--> />
+    </div></td>
+  </tr>
+  <tr>
+    <td class="textform"><span class="atencion">*</span> SQL:</td>
+    <td width="40"><div align="center">
+      <input name="sql" type="radio" value="1" <!--{if $datos.sql == 1}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="sql" type="radio" value="2" <!--{if $datos.sql == 2}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="sql" type="radio" value="3" <!--{if $datos.sql == 3}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="sql" type="radio" value="4" <!--{if $datos.sql == 4}-->checked="checked"<!--{/if}--> />
+    </div></td>
+  </tr>
+  <tr>
+    <td class="textform"><span class="atencion">*</span> UML:</td>
+    <td width="40"><div align="center">
+      <input name="uml" type="radio" value="1" <!--{if $datos.uml == 1}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="uml" type="radio" value="2" <!--{if $datos.uml == 2}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="uml" type="radio" value="3" <!--{if $datos.uml == 3}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="uml" type="radio" value="4" <!--{if $datos.uml == 4}-->checked="checked"<!--{/if}--> />
+    </div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+  </tr>
+  <tr>
+    <td><h4>Particulares</h4></td>
+    <td><div align="center">Nada</div></td>
+    <td><div align="center">B&aacute;sico</div></td>
+    <td><div align="center">Medio</div></td>
+    <td><div align="center">Alto&nbsp;&nbsp;</div></td>
+  </tr>
+  <tr>
+    <td class="textform"><span class="atencion">*</span> Lenguaje PHP:</td>
+    <td width="40"><div align="center">
+      <input name="php" type="radio" value="1" <!--{if $datos.php == 1}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="php" type="radio" value="2" <!--{if $datos.php == 2}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="php" type="radio" value="3" <!--{if $datos.php == 3}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="php" type="radio" value="4" <!--{if $datos.php == 4}-->checked="checked"<!--{/if}--> />
+    </div></td>
+  </tr>
+  <tr>
+    <td class="textform"><span class="atencion">*</span> HTML:</td>
+    <td width="40"><div align="center">
+      <input name="html" type="radio" value="1" <!--{if $datos.html == 1}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="html" type="radio" value="2" <!--{if $datos.html == 2}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="html" type="radio" value="3" <!--{if $datos.html == 3}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="html" type="radio" value="4" <!--{if $datos.html == 4}-->checked="checked"<!--{/if}--> />
+    </div></td>
+  </tr>
+   <tr>
+    <td class="textform"><span class="atencion">*</span> CSS:</td>
+    <td width="40"><div align="center">
+      <input name="css" type="radio" value="1" <!--{if $datos.css == 1}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="css" type="radio" value="2" <!--{if $datos.css == 2}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="css" type="radio" value="3" <!--{if $datos.css == 3}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="css" type="radio" value="4" <!--{if $datos.css == 4}-->checked="checked"<!--{/if}--> />
+    </div></td>
+  </tr>
+  <tr>
+    <td class="textform"><span class="atencion">*</span> Javascript:</td>
+    <td width="40"><div align="center">
+      <input name="js" type="radio" value="1" <!--{if $datos.js == 1}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="js" type="radio" value="2" <!--{if $datos.js == 2}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="js" type="radio" value="3" <!--{if $datos.js == 3}-->checked="checked"<!--{/if}--> />
+    </div></td>
+    <td width="40"><div align="center">
+      <input name="js" type="radio" value="4" <!--{if $datos.js == 4}-->checked="checked"<!--{/if}--> />
+    </div></td>
+  </tr>
+  <tr>
+    <td class="textform" valign="top"><span class="atencion">*</span> Otros lenguajes que conoce:  </td>
+    <td colspan="4"><textarea name="lenguajes" id="lenguajes" style="width:200px;"><!--{$datos.lenguajes}--></textarea></td>
+  </tr>
+  <tr>
+    <td class="textform" valign="top"><span class="atencion">*</span> Patrones de Dise&ntilde;o (OO) :</td>
+    <td colspan="4"><textarea name="patrones" id="patrones" style="width:200px;"><!--{$datos.patrones}--></textarea></td>
+  </tr>
+  <tr>
+    <td class="textform" valign="top"><span class="atencion">*</span>Framewors:</td>
+    <td colspan="4"><textarea name="frameworks" id="frameworks" style="width:200px;"><!--{$datos.frameworks}--></textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><h4>&iquest;A qu&eacute; se postula?</h4></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="textform"><span class="atencion">*</span> Puesto:</td>
+    <td colspan="2"><input name="puesto" type="radio" value="1" <!--{if $datos.puesto == 1}-->checked="checked"<!--{/if}--> />Desarrollador</td>
+    <td colspan="2"><input name="puesto" type="radio" value="2" <!--{if $datos.puesto == 2}-->checked="checked"<!--{/if}--> />Lider de Grupo</td>
+  </tr>
+  <tr>
+    <td class="textform" valign="top"><span class="atencion">*</span> &iquest;C&oacute;mo te enteras del taller?:</td>
+    <td colspan="4"><textarea name="enteraron" id="enteraron" style="width:200px;"><!--{$datos.enteraron}--></textarea></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="5"><div align="right">
+      <input name="siguiente" type="submit" id="siguiente" value="Registrarse" />
+    </div></td>
+  </tr>
+</table>
+</form>
