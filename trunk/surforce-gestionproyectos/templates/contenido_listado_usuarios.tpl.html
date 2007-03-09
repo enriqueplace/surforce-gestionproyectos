@@ -1,0 +1,49 @@
+
+<div><b><!--{$titulo}--></b></div>
+
+<div>
+	<table border="0" cellspacing="1"  cellpadding="5" class="listado"> 
+	<tr>
+		<th><a href="?orden=id">ID</A></th>
+		<th><a href="?orden=nombre">Nombre y Apellido</a></th>
+		<th><a href="?orden=puesto">Puesto</A></th>
+		<th><a href="?orden=usuario">Usuario</A></th>
+		<th><a href="?orden=pais">País</A></th>		
+<!--{*		<th>Ciudad</th>				
+		<th>Ingreso</th>
+		<th>Aceptado</th>
+		<th>Modificado</th> *}-->
+		<th><a href="?orden=conocimientos" title="Conocimientos">C</A></th>
+		<th><a href="?orden=foro">Foro</A></th>
+	</tr>
+	
+	<!--{foreach from=$usuarios item=linea}-->
+	
+		<!--{if $linea.habilitado}-->
+			<tr style="background-color:#DDFFD9;">
+		<!--{else}-->
+			<tr style="background-color:#FFD9D9;">
+		<!--{/if}-->	
+	
+	  		<td  class="listados"><!--{$linea.id_usuario}--></td>
+	  		<td> <a href="ficha_usuario.php?id=<!--{$linea.id_usuario}-->" title="Ver Ficha del Usuario"><!--{$linea.nombre_usuario}-->&nbsp;<!--{$linea.apellido_usuario}--></a></td>
+	  		
+	  		<td>
+	  		<!--{if $linea.id_puesto == "2" }-->
+	  			<strong><!--{$linea.desc_puesto}--></strong>	  			
+	  		<!--{else}-->
+	  			<!--{$linea.desc_puesto}-->
+	  		<!--{/if}-->
+	  		</td>
+	  		<td><a href="mailto:<!--{$linea.usuario_usuario}-->" title="Enviar un correo"><!--{$linea.usuario_usuario}--></A></td>
+	  		<td><!--{$linea.pais_usuario}--></td>
+<!--{* 		<td><!--{$linea.ciudad_usuario}--></td>
+	  		<td><!--{$linea.fecha_ingreso_usuario}--></td>
+	  		<td><!--{$linea.fecha_aceptado_usuario}--></td>
+	  		<td><!--{$linea.fecha_ult_mod_usuario}--></td> *}-->
+	  		<td><!--{$linea.conocimientos}--></td>
+	  		<td><!--{$linea.foro_asignado}--></td>
+	  	</tr>
+	<!--{/foreach}-->
+	</table>
+</div>

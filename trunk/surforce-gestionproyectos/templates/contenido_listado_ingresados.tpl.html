@@ -1,0 +1,31 @@
+<strong style="background:#f0f0f0;float:left;">
+	Usuarios aceptados hasta el momento
+</strong>
+<br />
+Solicitudes recibidas: <!--{$usuarios_todos.cantidad}-->, Aceptadas: <!--{$usuarios_habilitados.cantidad}-->, En Estudio: <!--{$usuarios_no_habilitados.cantidad}-->
+<br /><br />
+
+<table>
+	<tr style="background:#f0f0f0">
+		<th>Usuario</th>
+		<th>Pa&iacute;s</th>
+		<th>Profesi&oacute;n</th>
+		<th>Aceptado</th>
+
+	</tr>
+
+	<!--{foreach item=it from=$usuarios}-->
+	<tr>
+		<td style="padding:2px;border-bottom:1px dashed #CCCCCC;border-left:1px dashed #CCCCCC;">
+			<!--{$it.nombre_usuario}--> <!--{$it.apellido_usuario|truncate:10:"...":true}--></td>
+		<td style="padding:2px;border-bottom:1px dashed #CCCCCC;border-left:1px dashed #CCCCCC;">
+			<!--{$it.pais_usuario|replace:" ":"&nbsp;"}--></td>
+		<td style="padding:2px;border-bottom:1px dashed #CCCCCC;border-left:1px dashed #CCCCCC;">
+			<!--{$it.profesion_usuario|truncate:20:"...":true}--></td>
+		<td style="padding:2px;border-bottom:1px dashed #CCCCCC;border-left:1px dashed #CCCCCC;border-right:1px dashed #CCCCCC;">
+			<!--{$it.fecha_ult_mod_usuario|date_format:"%d/%m/%Y"|replace:" ":"&nbsp;"}--></td>
+
+	</tr>
+	<!--{/foreach}-->
+	</tr>
+</table>

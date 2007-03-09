@@ -1,0 +1,31 @@
+<div><b><!--{$titulo}--></b></div>
+
+<div>
+	<table border="0" cellspacing="1"  cellpadding="5" class="listado"> 
+	<tr align="right">
+		<td colspan="4"><a href="alta_cuestionario.php">Nuevo Cuestionario</a></td>
+	</tr>
+	<tr>
+		<th>ID</th>
+		<th>Nombre</th>
+		<th>Descripci&oacute;n</th>
+		<th>Fecha Creado</th>
+	</tr>
+	
+	<!--{foreach from=$cuestionarios item=linea}-->
+		<tr>
+	  		
+	  		<!--{* <td  class="listados"><a href="mostrar_usuario.php?id=<!--{$linea.id_usuario}-->"><!--{$linea.id_usuario}--></A></td> *}-->
+	  		
+	  		<td  class="listados"><!--{$linea.id_cuestionario}--></td>
+	  		<td><!--{$linea.nombre_cuestionario}--></td>
+	  		<td><!--{$linea.descripcion_cuestionario}--></td>
+	  		<td><!--{$linea.creacion_cuestionario}--></td>
+	  		<td><a href="vista_cuestionario.php">Ver</a></td>
+	  		<td><a href="modificar_cuestionario.php">Editar</a></td>
+	  		<td><a href="baja_cuestionario.php">Eliminar</a></td>
+	  		
+	  	</tr>
+	<!--{/foreach}-->
+	</table>
+</div>
