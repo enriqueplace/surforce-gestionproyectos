@@ -1,0 +1,1 @@
+Sistema que se usará en el tallerphp5.surforce.com como ejemplo de estudio para los usuarios que deseen aprender POO usando PHP5
